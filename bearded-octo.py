@@ -9,7 +9,7 @@ def post_get(website,port=80,scheme="http",path=None):
     for p in params:
         get += (p+"="+params[p]+"&")
     get=get[:-1]
-    req = urllib2.Request(scheme+"://"+website+":"+port+"/"+path+"?"+get)
+    req = urllib2.urlopen(scheme+"://"+website+":"+port+"/"+path+"?"+get)
     yield "OK"
 
 @route('/')
