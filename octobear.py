@@ -2,7 +2,7 @@ import urllib2;from bottle import *
 
 @post('/<port:int>/<scheme>/<website>/<path:path>') #for non-http port
 @post('/<scheme>/<website>/<path:path>') #for everything else
-def post_get(website,port=80,scheme="http",path=None):
+def post_get(website,port=80,scheme="http",path=""):
 	try:
 		params = request.query
 		#yield str(params)
@@ -17,7 +17,7 @@ def post_get(website,port=80,scheme="http",path=None):
 
 @get('/<port:int>/<scheme>/<website>/<path:path>')
 @get('/<scheme>/<website>/<path:path>')
-def get_post(website,port=80,scheme="http",path=None):
+def get_post(website,port=80,scheme="http",path=""):
 	try:
 		params = request.query
 		#yield str(params)
