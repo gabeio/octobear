@@ -4,13 +4,17 @@ from bottle import *
 @post('/<port:int>/<scheme>/<website>/<path:path>') #for non-http port
 @post('/<scheme>/<website>/<path:path>') #for everything else
 def post_get(website,port=80,scheme="http",path=None):
-    params = request.query
-    get = ""
-    for p in params:
-        get += (p+"="+params[p]+"&")
-    get=get[:-1]
-    req = urllib2.urlopen(scheme+"://"+website+":"+port+"/"+path+"?"+get)
-    yield "OK"
+	try:
+		params = request.query
+		yield str(params)
+		get = ""
+		for p in params:
+			get += str(str(p)+"="+str(params[p])+"&")
+		get=get[:-1]
+		yield str(get)
+		req = urllib2.urlopen(str(scheme)+"://"+str(website)+":"+str(port)+"/"+str(path)+"?"+str(get))
+		yield "OK"
+	except Exception,e: yield str(e)
 
 @route('/')
 def index():yield ""
