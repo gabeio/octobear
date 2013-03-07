@@ -1,5 +1,4 @@
-import urllib2
-from bottle import *
+import urllib2;from bottle import *
 
 @post('/<port:int>/<scheme>/<website>/<path:path>') #for non-http port
 @post('/<scheme>/<website>/<path:path>') #for everything else
