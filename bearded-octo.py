@@ -26,7 +26,7 @@ def get_post(website,port=80,scheme="http",path=None):
 			get += str(str(p)+"="+str(params[p])+"&")
 		get=get[:-1]
 		yield str(get)
-		req = urllib2.urlopen(str(scheme)+"://"+str(website)+":"+str(port)+"/"+str(path)+"?"+str(get))
+		req = urllib2.urlopen(str(scheme)+"://"+str(website)+":"+str(port)+"/"+str(path)+"?"+str(get),{})
 		yield "OK"
 	except Exception,e: yield str(e)
 
