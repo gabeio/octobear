@@ -8,15 +8,15 @@ Bottlepy Server to change post requests to get requests & vise versa.
 /PORT(optional)/SCHEME(http/s)/website(www.example.com)/the rest goes here?query data will be passed also
 
 # Example:
-http://localhost/8080/http/localhost/set?i=1 [get]
-sends a post request to:
-http://localhost:8080/set?i=1 [post]
+http://localhost/8080/http/localhost/set?i=1 [GET REQUEST]	
+sends a post request to:	
+http://localhost:8080/set?i=1 [POST REQUEST]
 
-OR
+-----
 
-http://localhost/http/localhost/account/something?password=pass [post]
-sends a get request to:
-http://localhost/account/something?password=pass [get]
+http://localhost/http/localhost/account/something?password=pass [POST REQUEST]	
+sends a get request to:		
+http://localhost/account/something?password=pass [GET REQUEST]
 
 # Run with:
 
