@@ -12,8 +12,8 @@ def post_get(website,port=80,scheme="http",path=""):
 		get=get[:-1]
 		#yield str(get)
 		req = urllib2.urlopen(str(scheme)+"://"+str(website)+":"+str(port)+"/"+str(path)+"?"+str(get))
-		yield "OK"
-	except Exception,e: yield str(e)
+		return "OK"
+	except Exception,e: print str(e)
 
 @get('/<port:int>/<scheme>/<website>/<path:path>')
 @get('/<scheme>/<website>/<path:path>')
@@ -27,8 +27,8 @@ def get_post(website,port=80,scheme="http",path=""):
 		get=get[:-1]
 		#yield str(get)
 		req = urllib2.urlopen(str(scheme)+"://"+str(website)+":"+str(port)+"/"+str(path)+"?"+str(get),"")
-		yield "OK"
-	except Exception,e: yield str(e)
+		return "OK"
+	except Exception,e: print str(e)
 
 @route('/')
 def index():yield ""
