@@ -19,4 +19,4 @@ def post_get(website,port=80,scheme="http",path=None):
 @route('/')
 def index():yield ""
 
-run()
+run(host="",port=80)
